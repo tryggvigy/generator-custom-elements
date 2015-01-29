@@ -11,6 +11,7 @@
 
 ## Getting Started
 
+tl;dr
 ```bash
 npm install -g generator-custom-elements
 ```
