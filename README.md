@@ -2,8 +2,18 @@
 
 > [Yeoman](http://yeoman.io) generator
 
+> See output on the [github project page](http://tryggvigy.github.io/generator-custom-elements)
+
+1. Inspect page source
+2. Realize the future
+3. ????
+4. Profit
 
 ## Getting Started
+
+```bash
+npm install -g generator-custom-elements
+```
 
 ### What is Yeoman?
 
