@@ -1,0 +1,71 @@
+<link href='http://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'>
+<template>
+  <style>
+    :host {
+      display: block;
+      position: relative;
+      background: rgb(238, 238, 238);
+      color: #111;
+      font-family: 'Roboto Condensed', sans-serif;
+      font-size: 10px;
+    }
+    .container {padding: 0.5rem 12rem 0.5rem 3rem;}
+    img {
+      position: absolute;
+      width: 230px;
+      height: 235px;
+      left: calc(100% - 230px/2);
+      top: calc(-228px/2);
+    }
+    h1 {
+      font-size: 4.5rem;
+    }
+    h3 {font-size: 2rem;}
+    ul {font-size: 1.8rem; margin-left: -16px;}
+  </style>
+
+  <div class="container">
+    <img src="images/yeoman.svg" alt="Yeoman logo">
+    <h1>'Allo, 'Allo</h1>
+    <h3>You now have</h3>
+    <ul>
+      <li>Custom elements</li>
+    </ul>
+  </div>
+</template>
+
+<script>
+(function() {
+
+  // Save reference to this script.
+  var currScript = document._currentScript || document.currentScript;
+
+  // access above template tag.
+  var tmpl = currScript.ownerDocument.querySelector('template');
+
+  // Create a prototype for a new element that extends HTMLElement
+  var elementProto = Object.create(HTMLElement.prototype);
+
+  // Setup our Shadow DOM and clone the template
+  elementProto.createdCallback = function() {
+    var root = this.createShadowRoot();
+    root.appendChild(document.importNode(tmpl.content, true));
+  };
+
+  // Fires when an instance was inserted into the document
+  elementProto.attachedCallback = function() {};
+
+  // Fires when an instance was removed from the document
+  elementProto.detachedCallback = function() {};
+
+  // Fires when an attribute was added, removed, or updated
+  elementProto.attributeChangedCallback = function(attr, oldVal, newVal) {};
+
+
+  // Register our new element
+  var element = document.registerElement('yeoman-greeter', {
+    prototype: elementProto
+  });
+
+})();
+</script>

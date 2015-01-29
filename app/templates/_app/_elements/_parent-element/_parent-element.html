@@ -1,0 +1,47 @@
+<template>
+  <style>
+    :host {
+      display: block;
+    }
+  </style>
+  <greeter-img></greeter-img>
+  <!-- content[select] : comma seperated list of accepted elements. -->
+  <h1>I come from the &lt;parent-element&gt;.</h1>
+  <content select="child-element"></content>
+</template>
+
+<script>
+(function() {
+
+  // Save reference to this script.
+  var currScript = document._currentScript || document.currentScript;
+
+  // access above template tag.
+  var tmpl = currScript.ownerDocument.querySelector('template');
+
+  // Create a prototype for a new element that extends HTMLElement
+  var elementProto = Object.create(HTMLElement.prototype);
+
+  // Setup our Shadow DOM and clone the template
+  elementProto.createdCallback = function() {
+    var root = this.createShadowRoot();
+    root.appendChild(document.importNode(tmpl.content, true));
+  };
+
+  // Fires when an instance was inserted into the document
+  elementProto.attachedCallback = function() {};
+
+  // Fires when an instance was removed from the document
+  elementProto.detachedCallback = function() {};
+
+  // Fires when an attribute was added, removed, or updated
+  elementProto.attributeChangedCallback = function(attr, oldVal, newVal) {};
+
+
+  // Register our new element
+  var element = document.registerElement('parent-element', {
+    prototype: elementProto
+  });
+
+})();
+</script>

@@ -1,0 +1,40 @@
+{
+  "name": "generator-custom-elements",
+  "version": "0.1.0",
+  "description": "Build a webapp using pure javascript custom elements (no Polymer)",
+  "license": "MIT",
+  "main": "app/index.js",
+  "repository": "tryggvigy/generator-custom-elements",
+  "author": {
+    "name": "Tryggvi Gylfason",
+    "email": "tryggvigy@gmail.com",
+    "url": "https://github.com/tryggvigy"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "files": [
+    "app"
+  ],
+  "keywords": [
+    "yeoman-generator",
+    "web-components",
+    "custom-elements",
+    "vanilla-js",
+    "pure-javascript"
+  ],
+  "dependencies": {
+    "yeoman-generator": "^0.18.0",
+    "chalk": "^0.5.0",
+    "yosay": "^0.3.0"
+  },
+  "devDependencies": {
+    "mocha": "*"
+  },
+  "peerDependencies": {
+    "yo": ">=1.0.0"
+  }
+}
