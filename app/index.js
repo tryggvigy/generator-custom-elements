@@ -8,27 +8,27 @@ module.exports = yeoman.generators.Base.extend({
     this.pkg = require('../package.json');
   },
 
-  prompting: function () {
-    var done = this.async();
+  // prompting: function () {
+  //   var done = this.async();
 
-    // Have Yeoman greet the user.
-    this.log(yosay(
-      'Welcome to the grand' + chalk.red('CustomElements') + ' generator!'
-    ));
+  //   // Have Yeoman greet the user.
+  //   this.log(yosay(
+  //     'Welcome to the grand' + chalk.red('CustomElements') + ' generator!'
+  //   ));
 
-    var prompts = [{
-      type: 'confirm',
-      name: 'someOption',
-      message: 'Would you like to enable this option?',
-      default: true
-    }];
+  //   var prompts = [{
+  //     type: 'confirm',
+  //     name: 'someOption',
+  //     message: 'Would you like to enable this option?',
+  //     default: true
+  //   }];
 
-    this.prompt(prompts, function (props) {
-      this.someOption = props.someOption; // true || false
+  //   this.prompt(prompts, function (props) {
+  //     this.someOption = props.someOption; // true || false
 
-      done();
-    }.bind(this));
-  },
+  //     done();
+  //   }.bind(this));
+  // },
 
   writing: {
     app: function () {

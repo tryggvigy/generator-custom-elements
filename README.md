@@ -29,12 +29,17 @@ To install generator-custom-elements from npm, run:
 npm install -g generator-custom-elements
 ```
 
-Finally, initiate the generator:
+Then, initiate the generator:
 
 ```bash
 yo custom-elements
 ```
 
+Finally, fire it up with your favorite HTTP server:
+
+```bash
+python -m SimpleHTTPServer
+```
 ### Getting To Know Yeoman
 
 Yeoman has a heart of gold. He's a person with feelings and opinions, but he's very easy to work with. If you think he's too opinionated, he can be easily convinced.
