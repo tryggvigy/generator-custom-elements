@@ -1,8 +1,0 @@
-{
-  "name": "package",
-  "version": "0.0.0",
-  "dependencies": {
-    "webcomponentsjs": "~0.5.4"
-  }
-}
-
